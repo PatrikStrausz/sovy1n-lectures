@@ -6,8 +6,16 @@
   </head>
 
   <body>
-    <div>Hello Sovy my name is Patrik</div>
-
-    <script src="src/index.js"></script>
+    
+    <div id="name"></div>
+    <script>
+      fetch("https://swapi.co/api/people/1/").then(function(response) {
+        response.json().then(function(data) {
+          console.log(data);
+          console.log(data.name);
+          document.getElementById("name").innerHTML = data.name;
+        });
+      });
+    </script>
   </body>
 </html>
